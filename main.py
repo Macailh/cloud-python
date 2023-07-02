@@ -1,7 +1,12 @@
+import typer
 import gofile
 
 
-def upload_file(file):
+app = typer.Typer()
+
+
+@app.command()
+def upload(file):
     server = gofile.getServer()
     print(f"The server is {server}")
 
@@ -10,4 +15,4 @@ def upload_file(file):
 
 
 if __name__ == "__main__":
-    upload_file("exampleFile.txt")
+    app()
